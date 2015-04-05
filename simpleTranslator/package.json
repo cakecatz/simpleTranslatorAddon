@@ -1,0 +1,10 @@
+{
+  "name": "simple-translator",
+  "title": "simpleTranslator",
+  "id": "simpleTranslator@codedoc.net",
+  "description": "a basic add-on",
+  "main": "./lib/main.js",
+  "author": "Ryo Narita",
+  "license": "MIT",
+  "version": "0.0.1"
+}

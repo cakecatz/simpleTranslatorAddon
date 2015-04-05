@@ -1,14 +1,11 @@
 var outputArea = getElem('translator-output-box');
 
-
-
 self.port.on('show', function onShow(text) {
-  outputArea.innerHTML = '';
   var url = makeTranslateRequestUrl(text, 'en|ja');
   var req = new XMLHttpRequest();
   req.onload = function() {
     data = JSON.parse(this.responseText);
-    outputArea.insertAdjacentHTML('beforeend', data.responseData.translatedText);
+    outputArea.innerHTML = data.responseData.translatedText;
   };
 
   req.open('get', url, true);
@@ -17,7 +14,7 @@ self.port.on('show', function onShow(text) {
 });
 
 self.port.on('hide', function() {
-  outputArea.innerHTML = '';
+  outputArea.innerHTML = 'Translating...';
 });
 
 function getElem(id) {

@@ -1,9 +1,20 @@
 {
-  "name": "translator",
-  "title": "translator",
-  "id": "jid1-Hqz1c8MbpPuINA",
-  "description": "a basic add-on",
-  "author": "",
-  "license": "MPL 2.0",
-  "version": "0.1"
+    "name": "simple-translator", 
+    "license": "MIT",
+    "author": "Ryo Narita",
+    "directories": {
+        "test": "test"
+    },
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "gulp": "^3.8.11",
+        "gulp-watch": "^4.2.2",
+        "gulp-shell": "^0.4.0"
+    },
+    "main": "gulpfile.js",
+    "id": "jid1-3PoKSMosadHBGw",
+    "description": ""
 }
