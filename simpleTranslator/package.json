@@ -2,9 +2,9 @@
   "name": "simple-translator",
   "title": "simpleTranslator",
   "id": "simpleTranslator@codedoc.net",
-  "description": "a basic add-on",
+  "description": "Translate English to Japanese.\nselect text and press ctrl + shift.",
   "main": "./lib/main.js",
   "author": "Ryo Narita",
   "license": "MIT",
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
