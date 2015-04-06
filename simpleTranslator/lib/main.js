@@ -35,6 +35,8 @@ var translationPanel = require("sdk/panel").Panel({
   contentScriptFile: data.url("translation.js"),
 });
 
+var Request = require('sdk/request').Request;
+
 var { observer } = require("sdk/keyboard/observer");
 
 tabs.on('ready', function(tab) {
@@ -45,7 +47,6 @@ tabs.on('ready', function(tab) {
     mousePosition = position;
   });
 });
-
 
 observer.on('keydown', function(event) {
   if (event.defaultPrevented){
@@ -103,6 +104,17 @@ translationPanel.on('hide', function(){
 translationPanel.on('show', function(){
   translationPanel.port.emit("show", selection.text);
 });
+
+translationPanel.port.on('translate', function(data) {
+  var translateRequest = Request({
+    url: data.url,
+    onComplete: function(response) {
+      translationPanel.port.emit("translated", response.text);
+    }
+  });
+  translateRequest.get();
+});
+
 
 // methods
 
